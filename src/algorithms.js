@@ -10,13 +10,9 @@ export function mergeSortRecursive(elements) {
 
 function merge(left, right) {
   const result = [];
-  let leftElement;
-  let rightElement;
+  let leftElement = left.shift();
+  let rightElement = right.shift();
   while (true) {
-    if (!leftElement) {
-      leftElement = left.shift();
-      rightElement = right.shift();
-    }
     if (leftElement >= rightElement) {
       result.push(rightElement);
       rightElement = right.shift();
